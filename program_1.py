@@ -6,13 +6,17 @@
 # Add your logic starting on line 11
 
 def initials_generator(personsName):
-
     personsInitials = ""
-    #    Add your logic here
 
-    return personsInitials.strip()
+    name_parts = personsName.split()
 
-personsName = input('Enter the users first, middle, and last name')
+    for part in name_parts:
+        if part:  # Check if part is not empty
+            personsInitials += part[0] + ". "  # Add the initial followed by a period and space
+
+    return personsInitials.strip() 
+
+personsName = input('Enter the user\'s first, middle, and last name: ')
 
 initials = initials_generator(personsName)
 
