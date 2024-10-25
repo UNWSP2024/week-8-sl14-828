@@ -8,13 +8,16 @@
 # Start your changes on line 13
 
 def word_separator(sentence):
-
     new_sentence = ""
-    #    Add your logic here
+    
+    for char in sentence:
+        if char.isupper() and new_sentence:  
+            new_sentence += " "  # Add a space before the uppercase letter
+        new_sentence += char  # Add the character to the new sentence
 
-    return new_sentence.strip()
-
-# Example usage
+    new_sentence = new_sentence[0].upper() + new_sentence[1:].lower()
+    
+    return new_sentence.strip()  # Remove any trailing spaces
 
 sentence = "StopAndSmellTheRoses"
 
